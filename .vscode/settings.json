@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+        "airtable",
+        "nextjs",
+        "tailwindcss",
+        "todos"
+    ],
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
