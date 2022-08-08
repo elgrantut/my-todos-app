@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import { LockClosedIcon } from '@heroicons/react/solid'
 import { ClipboardListIcon } from '@heroicons/react/outline'
 

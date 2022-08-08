@@ -1,10 +1,8 @@
 import React from 'react'
-import Link from 'next/Link'
-import Image from 'next/Image'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function NavBar({ user }) {
-    console.log('user', user)
-
     return (
         <nav className="flex justify-between items-center py-4">
             <div className="flex">
