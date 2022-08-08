@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
     return (
         <TodosProvider>
             <UserProvider user={user}>
-                <div className="container mx-auto my-10 max-w-sm">
+                <>
                     <Component {...pageProps} />
-                </div>
+                </>
             </UserProvider>
         </TodosProvider>
     )
