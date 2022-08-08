@@ -3,7 +3,7 @@ import { table } from '../utils/airtable'
 import { withApiAuthRequired, getSession } from '@auth0/nextjs-auth0'
 
 export default withApiAuthRequired(async (req, res) => {
-    const { description, color } = req.body
+    const { description } = req.body
     const { user } = getSession(req, res)
 
     try {

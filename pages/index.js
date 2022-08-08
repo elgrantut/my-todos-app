@@ -1,13 +1,14 @@
 import { useEffect, useContext } from 'react'
 import Head from 'next/head'
+import { useUser, getSession } from '@auth0/nextjs-auth0'
 // Components
 import Navbar from '../components/Navbar'
+import Landing from '../components/Landing'
 import Todo from '../components/Todo'
 import TodoForm from '../components/TodoForm'
 //Utils
 import { table, minifyRecords } from './api/utils/airtable'
 import { TodosContext } from '../context/TodosContext'
-import { useUser, getSession } from '@auth0/nextjs-auth0'
 
 export default function Home({ initialTodos }) {
     const { todos, setTodos } = useContext(TodosContext)
@@ -15,7 +16,7 @@ export default function Home({ initialTodos }) {
 
     useEffect(() => {
         setTodos(initialTodos)
-    }, [])
+    })
 
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>{error.message}</div>
@@ -23,14 +24,14 @@ export default function Home({ initialTodos }) {
     return (
         <div>
             <Head>
-                <title>Next JS - Task Manager</title>
+                <title>Task Manager</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta charSet="UTF-8" />
             </Head>
-            <Navbar user={user} />
             <main>
                 {user ? (
                     <>
+                        <Navbar user={user} />
                         <h1 className="text-2xl text-center mb-4">
                             This is <span> {user.nickname} </span> TO DO´s
                         </h1>
@@ -43,9 +44,7 @@ export default function Home({ initialTodos }) {
                         </ul>
                     </>
                 ) : (
-                    <h1 className="text-2xl text-center mb-4">
-                        Please Sign in.
-                    </h1>
+                    <Landing />
                 )}
             </main>
         </div>
